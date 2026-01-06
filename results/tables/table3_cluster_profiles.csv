@@ -1,0 +1,4 @@
+cluster_final,Cluster Label,Size,%,CV Consumption,Food Ratio,Non-Food Ratio,Total Consumption (Rp)
+0,Stable (Low Volatility),79,77.5,119.769,53.051,46.949,825653.456
+1,Volatile (High CV),18,17.6,302.82,13.777,86.223,1165376.333
+2,Extreme (Very High CV),5,4.9,242.572,38.908,61.092,1626205.0

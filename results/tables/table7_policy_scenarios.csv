@@ -1,0 +1,5 @@
+Scenario,Target Clusters,N Targeted,Coverage (%),Avg Vuln Score,Efficiency
+A: Target Extreme Only,[2],5,4.9,68.46,13.97
+B: High + Extreme,"[1, 2]",23,22.55,51.72,2.29
+C: Universal Coverage,"[0, 1, 2]",102,100.0,35.71,0.36
+D: Score-based (Top 30%),Threshold-based,31,30.39,48.86,1.61

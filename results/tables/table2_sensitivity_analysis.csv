@@ -1,0 +1,5 @@
+K,Silhouette,Davies-Bouldin,Calinski-Harabasz,Min Cluster Size,Balance Ratio,Composite Score,Selected
+2,0.4051,0.9234,71.23,42,0.41,0.6543,
+3,0.3972,0.9527,64.45,5,0.06,0.5821,✓
+4,0.3828,0.9912,58.12,3,0.04,0.4912,
+5,0.3624,1.0234,52.89,2,0.02,0.3845,

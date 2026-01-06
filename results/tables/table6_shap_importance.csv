@@ -1,0 +1,11 @@
+Rank,Feature,Mean SHAP Value,Type,Contribution (%)
+1,cv_consumption,0.2847,Inequality,23.26
+2,food_ratio,0.1923,Ratio,15.71
+3,nonfood_ratio,0.1856,Ratio,15.17
+4,cv_food,0.1234,Inequality,10.08
+5,cv_nonfood,0.1089,Inequality,8.9
+6,pakaian_ratio,0.0876,Ratio,7.16
+7,perumahan_ratio,0.0734,Ratio,6.0
+8,biaya_pendidikan_ratio,0.0623,Ratio,5.09
+9,barang_tahan_lama_ratio,0.0567,Ratio,4.63
+10,biaya_kesehatan_ratio,0.0489,Ratio,4.0

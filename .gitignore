@@ -1,0 +1,30 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# VS Code
+.vscode/
+
+# Environment
+venv/
+env/
+ENV/
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Data files (optional - uncomment if data too large)
+# data/dataset.csv
+
+# Large model files (optional - if model >100MB)
+# results/models/*.pkl
+# results/models/*.joblib

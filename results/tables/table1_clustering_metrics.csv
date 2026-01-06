@@ -1,0 +1,4 @@
+Method,Optimal K,Silhouette Score,Davies-Bouldin Index,Calinski-Harabasz,Overall Score,Rank
+K-Means,3,0.3972,0.9527,64.45,0.8944,1
+Hierarchical (Ward),3,0.3972,0.9527,64.45,0.8944,1
+GMM,3,0.3965,0.9542,64.21,0.8891,3

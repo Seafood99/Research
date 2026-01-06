@@ -1,0 +1,40 @@
+Component,Result
+1. DATA,
+  - Source,BPS Rural Household Consumption
+  - Sample Size,102 observations
+  - Time Period,2013-2025 (13 years)
+  - Features,35 features (ratios + CV)
+,
+2. CLUSTERING,
+  - Method Selected,K-Means
+  - Optimal K,K = 3
+  - Silhouette Score,0.3972 (good cohesion)
+  - Davies-Bouldin,0.9527 (good separation)
+  - Calinski-Harabasz,64.45 (good variance ratio)
+  - Cluster 0 (Stable),79 obs (77%)
+  - Cluster 1 (Volatile),18 obs (18%)
+  - Cluster 2 (Extreme),5 obs (5%)
+,
+3. CLASSIFICATION,
+  - Model Selected,Random Forest
+  - Cross-Validation,5-Fold Stratified CV
+  - Mean Accuracy,98.05%
+  - Std Deviation,±2.67%
+  - Min-Max Accuracy,95.00% - 100.0%
+  - F1-Score,0.9808
+,
+4. FEATURE IMPORTANCE,
+  - Top Feature,CV Consumption (23.26%)
+  - 2nd Feature,Food Ratio (15.71%)
+  - 3rd Feature,Non-Food Ratio (15.17%)
+  - Top 3 Contribution,54.14%
+,
+5. VALIDATION,
+  - K Selection,Sensitivity K=2-5 (Composite scoring)
+  - Model Comparison,RF vs XGBoost (Paired t-test)
+  - Statistical Test,p = 0.3739 (no sig. difference)
+,
+6. POLICY TARGETING,
+  - Vulnerability Score Range,21.4 - 74.1
+  - Best Scenario,Score-based Top 30%
+  - Recommended Coverage,23-30% (High + Extreme clusters)
