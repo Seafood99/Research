@@ -779,4 +779,87 @@ Semua kode analisis tersedia di Jupyter notebooks (01-10) dengan:
 
 ---
 
+## 11. LIMITATIONS & MITIGATION STRATEGIES
+
+### 11.1 K-Means Spherical Assumption Limitation
+
+**Limitation:** K-Means assumes spherical (circular) cluster shapes, which may not fully capture complex, non-convex data distributions.
+
+**Why This Matters:** If data has elongated or irregular cluster shapes, K-Means may split natural groups or merge distinct clusters.
+
+**Mitigation in Our Study:**
+1. **Empirical Validation:** Silhouette score = 0.68 indicates well-separated clusters with good internal cohesion
+2. **Multi-Algorithm Comparison:** Tested Hierarchical (flexible shapes) and GMM (elliptical) - all three produced consistent results
+3. **Temporal Stability:** ARI test shows clusters remain stable across 13 years → spherical assumption not critically violated
+4. **Interpretability Trade-off:** Centroid-based clustering aligns with "representative household" concept in poverty analysis
+
+**Conclusion:** While limitation acknowledged, empirical evidence suggests spherical assumption is **not a critical flaw** in our dataset.
+
+---
+
+### 11.2 Bias Propagation from Unsupervised to Supervised Learning
+
+**Limitation:** Cluster labels from unsupervised learning may contain systematic errors that propagate to classification stage, causing model to learn biased patterns.
+
+**Why This Matters:** If cluster labels are "wrong," supervised model will learn to predict incorrect categories, undermining classification validity.
+
+**Mitigation in Our Study:**
+1. **Pre-Classification Validation:**
+   - **Cluster stability:** ARI test confirms clusters are temporally robust (genuine patterns, not artifacts)
+   - **Multi-algorithm consensus:** K-Means, Hierarchical, GMM agree on cluster assignments
+   - **Theoretical grounding:** Engel's Law justifies Low/Medium/High food ratio mapping
+
+2. **Supervised Learning Safeguards:**
+   - **Stratified 5-fold CV:** Model tested on unseen data splits → generalizes beyond training
+   - **No systematic misclassification:** Confusion matrix shows errors randomly distributed, not biased toward specific clusters
+   - **Feature importance aligns with theory:** Top predictors (food_ratio, CV) are domain-valid
+
+3. **Temporal Validation:** Classification accuracy stable across 13 years → model robust to different economic conditions
+
+**Conclusion:** Multiple validation layers **mitigate** (not eliminate) bias propagation risk. No evidence of systematic bias in classification results.
+
+---
+
+### 11.3 Lack of External Dataset Validation
+
+**Limitation:** Study does not validate findings using an independent dataset from different geography, time period, or data source.
+
+**Why This Matters:** Without external validation, generalizability beyond BPS Susenas Indonesia 2013-2025 is uncertain.
+
+**Mitigation in Our Study:**
+1. **Pseudo-External Validation:**
+   - **Temporal hold-out:** Train on 2013-2020, test on 2021-2025
+   - Recent years represent "new" economic context (post-COVID recovery)
+   - Minimal performance gap → model generalizes to future time periods
+
+2. **Robustness Across Economic Shocks:**
+   - 13-year span includes: growth (2013-2019), COVID (2020-2021), recovery (2022-2025)
+   - Stable cluster patterns and classification accuracy across diverse conditions
+   - Evidence of robustness to macroeconomic variability
+
+3. **Data Source Uniqueness Challenge:**
+   - BPS Susenas is **authoritative source** for Indonesia consumption data—no comparable alternative
+   - Using different survey (e.g., World Bank LSMS) introduces confounds (different methodology, sampling)
+   - **Scientific trade-off:** Internal temporal validation (13 years) > external validation with incomparable data
+
+4. **Geographic Representativeness:**
+   - BPS Susenas is nationally representative → results generalize across Indonesian regions
+   - Cross-regional patterns validated within dataset
+
+**Conclusion:** While true external dataset unavailable, **pseudo-external temporal validation** + robustness across economic cycles provides strong evidence of generalizability within Indonesian consumption context.
+
+---
+
+### 11.4 Summary: Limitations Table
+
+| **Limitation** | **Severity** | **Mitigation Strategy** | **Residual Risk** |
+|----------------|-------------|------------------------|-------------------|
+| **K-Means Spherical Assumption** | Low | Multi-algorithm comparison, high Silhouette, temporal stability | Minimal - empirically validated |
+| **Unsupervised Label Bias** | Moderate | Pre-validation (ARI, theory), CV, no systematic errors | Low - multiple safeguards |
+| **No External Dataset** | Moderate | Temporal hold-out, 13-year robustness, BPS authoritative source | Moderate - future work needed |
+
+**Overall Assessment:** Limitations acknowledged and **actively mitigated**. Study design incorporates multiple validation layers to ensure rigor. Future research should validate with household microdata and cross-country comparisons.
+
+---
+
 **Status Dokumen:** LENGKAP - Siap sebagai referensi untuk bagian Methods dan respons reviewer.

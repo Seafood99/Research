@@ -28,3 +28,7 @@ desktop.ini
 # Large model files (optional - if model >100MB)
 # results/models/*.pkl
 # results/models/*.joblib
+
+# AI Prompts (private use only)
+.prompts/
+HANDOVER.md
